@@ -230,6 +230,48 @@ section { padding: 88px 5%; }
 .proof-card .lbl { font-size: 13px; color: rgba(255,255,255,0.6); margin-top: 6px; line-height: 1.5; }
 .proof-card .tag { font-size: 11px; color: var(--gold); font-weight: 600; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 8px; }
 
+/* ── 6 OPPORTUNITIES ── */
+.opportunities { background: var(--white); }
+.opp-grid {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+  gap: 20px;
+}
+.opp-card {
+  border-radius: 12px; padding: 26px;
+  border: 1px solid var(--border); background: var(--cream);
+  position: relative; overflow: hidden; transition: box-shadow 0.2s, transform 0.2s;
+}
+.opp-card:hover { box-shadow: 0 8px 32px rgba(0,0,0,0.08); transform: translateY(-2px); }
+.opp-card::before {
+  content: ''; position: absolute; top: 0; left: 0; right: 0;
+  height: 4px; background: var(--navy);
+}
+.opp-card.gold::before { background: var(--gold); }
+.opp-num {
+  font-size: 11px; font-weight: 800; letter-spacing: 2px;
+  text-transform: uppercase; color: var(--gold); margin-bottom: 10px;
+}
+.opp-card h3 { font-size: 16px; font-weight: 700; color: var(--navy); margin-bottom: 8px; }
+.opp-card .desc { font-size: 13.5px; color: var(--gray); margin-bottom: 12px; line-height: 1.6; }
+.opp-card .cambodia-tag {
+  display: inline-flex; align-items: center; gap: 6px;
+  background: rgba(26,58,92,0.08); color: var(--navy);
+  font-size: 11.5px; font-weight: 600; padding: 4px 12px;
+  border-radius: 20px;
+}
+.opp-cta {
+  margin-top: 48px; background: var(--navy); border-radius: 12px;
+  padding: 32px 40px; display: flex; align-items: center;
+  justify-content: space-between; flex-wrap: wrap; gap: 20px;
+}
+.opp-cta p { color: rgba(255,255,255,0.8); font-size: 16px; max-width: 560px; margin: 0; }
+.opp-cta p strong { color: #fff; }
+.opp-cta a {
+  background: var(--gold); color: #fff; padding: 13px 28px;
+  border-radius: 6px; font-weight: 700; font-size: 15px;
+  text-decoration: none; white-space: nowrap; flex-shrink: 0;
+}
+
 /* ── CURRICULUM PREVIEW ── */
 .curriculum { background: var(--cream); }
 .curriculum-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
@@ -337,6 +379,7 @@ footer strong { color: var(--gold2); }
   <a href="#" class="nav-logo">KhmerAI<span>Academy</span></a>
   <ul class="nav-links">
     <li><a href="#services">Services</a></li>
+    <li><a href="#opportunities">Opportunities</a></li>
     <li><a href="#about">About</a></li>
     <li><a href="#curriculum">Curriculum</a></li>
     <li><a href="#contact">Contact</a></li>
@@ -427,6 +470,64 @@ footer strong { color: var(--gold2); }
       <p>License the KhmerAI Academy training curriculum to universities, ministries, or NGOs. Train your own internal trainers using our proven materials and assessment tools.</p>
       <div class="price">$2,000 – $8,000</div>
     </div>
+  </div>
+</section>
+
+<!-- 6 OPPORTUNITIES -->
+<section class="opportunities" id="opportunities">
+  <div class="section-header">
+    <div class="section-label">Why Learn AI Now</div>
+    <h2 class="section-title">6 profitable AI businesses you can start in Cambodia — no coding required</h2>
+    <p class="section-sub">The window is wide open in 2026. KhmerAI Academy gives you the skills to launch any of these — faster than anyone else in the market.</p>
+  </div>
+  <div class="opp-grid">
+
+    <div class="opp-card">
+      <div class="opp-num">Opportunity 01</div>
+      <h3>🤝 AI Consultant</h3>
+      <p class="desc">Most Cambodian banks, NGOs, and ministries have no idea how to deploy AI into their workflows. Master Claude AI and charge $500–$3,000 to help them optimize marketing, finance, and HR operations.</p>
+      <span class="cambodia-tag">🇰🇭 High demand: 500K+ SMEs need this</span>
+    </div>
+
+    <div class="opp-card gold">
+      <div class="opp-num">Opportunity 02</div>
+      <h3>🔍 Generative Engine Optimization (GEO)</h3>
+      <p class="desc">Cambodian customers are moving from Google to ChatGPT and Gemini. Help local businesses appear in AI responses by optimizing their presence on LinkedIn, YouTube, and Reddit — a brand new service nobody offers yet.</p>
+      <span class="cambodia-tag">🇰🇭 Zero competitors in Cambodia today</span>
+    </div>
+
+    <div class="opp-card">
+      <div class="opp-num">Opportunity 03</div>
+      <h3>📞 Voice AI Receptionist</h3>
+      <p class="desc">Set up AI-powered appointment schedulers for Cambodian clinics, dental offices, and mechanics so they never miss a customer call. Recurring monthly retainer model — one setup, ongoing income.</p>
+      <span class="cambodia-tag">🇰🇭 Perfect for Phnom Penh clinics & SMEs</span>
+    </div>
+
+    <div class="opp-card gold">
+      <div class="opp-num">Opportunity 04</div>
+      <h3>🎯 AI-Native Ad Agency</h3>
+      <p class="desc">Generate hundreds of ad creative variations with AI for Cambodian brands — hotels, restaurants, real estate — at a fraction of traditional agency costs. Deliver in days, not weeks. Higher margins, faster results.</p>
+      <span class="cambodia-tag">🇰🇭 Tourism & retail brands hungry for this</span>
+    </div>
+
+    <div class="opp-card">
+      <div class="opp-num">Opportunity 05</div>
+      <h3>🎬 AI Content Creation (UGC)</h3>
+      <p class="desc">Cambodian e-commerce brands constantly need fresh video content for TikTok and Facebook. Use AI to generate massive video variations from product images — find winning content without expensive production costs.</p>
+      <span class="cambodia-tag">🇰🇭 TikTok & Facebook Shop exploding in KH</span>
+    </div>
+
+    <div class="opp-card gold">
+      <div class="opp-num">Opportunity 06</div>
+      <h3>⚙️ Vertical AI SaaS</h3>
+      <p class="desc">Build a specialized AI tool for a specific Cambodian industry — legal document drafting, infrastructure reporting, NGO grant writing — using no-code tools. Like MamaGuard, but for your sector.</p>
+      <span class="cambodia-tag">🇰🇭 Example: MamaGuard for healthcare</span>
+    </div>
+
+  </div>
+  <div class="opp-cta">
+    <p><strong>KhmerAI Academy trains you to execute all six.</strong> No coding required. Cambodia context. Khmer and English delivery. Real frameworks from a practitioner who has already built and shipped AI products.</p>
+    <a href="#contact">Start Your Training →</a>
   </div>
 </section>
 
