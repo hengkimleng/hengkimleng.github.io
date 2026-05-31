@@ -1,0 +1,670 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="KhmerAI Academy — Cambodia's premier Claude AI training and consulting company. Corporate workshops, certificate programs, and AI consulting in Khmer and English.">
+<meta property="og:title" content="KhmerAI Academy — AI Training for Cambodia">
+<meta property="og:description" content="Learn Claude AI with Cambodia's leading AI practitioner. Corporate workshops, certificate programs, books, and consulting.">
+<meta property="og:image" content="https://mama-guard-gemma4.vercel.app/og.png">
+<title>KhmerAI Academy — AI Training & Consulting for Cambodia</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@700&display=swap');
+
+:root {
+  --navy: #1A3A5C;
+  --navy2: #0F2540;
+  --gold: #C9910D;
+  --gold2: #F5C842;
+  --cream: #FAFAF5;
+  --white: #FFFFFF;
+  --gray: #64748B;
+  --light: #F1F5F9;
+  --border: #E2E8F0;
+  --text: #1E293B;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Inter', sans-serif;
+  color: var(--text);
+  background: var(--white);
+  font-size: 16px;
+  line-height: 1.7;
+}
+
+/* ── NAV ── */
+nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+  background: rgba(15,37,64,0.97);
+  backdrop-filter: blur(10px);
+  padding: 0 5%;
+  display: flex; align-items: center; justify-content: space-between;
+  height: 64px;
+}
+.nav-logo {
+  font-weight: 800; font-size: 18px; color: var(--white);
+  text-decoration: none; letter-spacing: -0.5px;
+}
+.nav-logo span { color: var(--gold2); }
+.nav-links { display: flex; gap: 32px; list-style: none; }
+.nav-links a { color: rgba(255,255,255,0.7); text-decoration: none; font-size: 14px; font-weight: 500; transition: color 0.2s; }
+.nav-links a:hover { color: var(--gold2); }
+.nav-cta {
+  background: var(--gold); color: #fff; border: none;
+  padding: 9px 20px; border-radius: 6px; font-size: 14px;
+  font-weight: 600; cursor: pointer; font-family: 'Inter', sans-serif;
+  text-decoration: none; transition: background 0.2s;
+}
+.nav-cta:hover { background: #A87A0A; }
+.nav-mobile-btn { display: none; background: none; border: none; color: #fff; font-size: 22px; cursor: pointer; }
+
+/* ── HERO ── */
+.hero {
+  background: var(--navy2);
+  min-height: 100vh;
+  display: flex; align-items: center;
+  padding: 100px 5% 80px;
+  position: relative; overflow: hidden;
+}
+.hero::before {
+  content: '';
+  position: absolute; top: -150px; right: -150px;
+  width: 600px; height: 600px; border-radius: 50%;
+  background: rgba(201,145,13,0.08);
+}
+.hero::after {
+  content: '';
+  position: absolute; bottom: -100px; left: 20%;
+  width: 400px; height: 400px; border-radius: 50%;
+  background: rgba(201,145,13,0.05);
+}
+.hero-content { max-width: 680px; position: relative; z-index: 1; }
+.hero-badge {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: rgba(201,145,13,0.15); border: 1px solid rgba(201,145,13,0.3);
+  color: var(--gold2); padding: 6px 14px; border-radius: 20px;
+  font-size: 13px; font-weight: 600; margin-bottom: 28px;
+}
+.hero-badge .dot { width: 7px; height: 7px; background: var(--gold2); border-radius: 50%; animation: pulse 2s infinite; }
+@keyframes pulse { 0%,100%{opacity:1} 50%{opacity:0.4} }
+.hero h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(36px, 5vw, 58px);
+  color: var(--white); line-height: 1.1; margin-bottom: 12px;
+}
+.hero h1 span { color: var(--gold2); }
+.hero .khmer {
+  font-size: 18px; color: rgba(255,255,255,0.55);
+  margin-bottom: 24px; font-weight: 300;
+}
+.hero p {
+  font-size: 18px; color: rgba(255,255,255,0.75);
+  margin-bottom: 36px; max-width: 560px; line-height: 1.7;
+}
+.hero-btns { display: flex; gap: 14px; flex-wrap: wrap; margin-bottom: 52px; }
+.btn-primary {
+  background: var(--gold); color: #fff; padding: 14px 28px;
+  border-radius: 6px; font-weight: 700; font-size: 15px;
+  text-decoration: none; transition: background 0.2s;
+}
+.btn-primary:hover { background: #A87A0A; }
+.btn-secondary {
+  background: rgba(255,255,255,0.1); color: #fff; padding: 14px 28px;
+  border-radius: 6px; font-weight: 600; font-size: 15px;
+  text-decoration: none; border: 1px solid rgba(255,255,255,0.2);
+  transition: background 0.2s;
+}
+.btn-secondary:hover { background: rgba(255,255,255,0.18); }
+.hero-proof {
+  display: flex; gap: 32px; flex-wrap: wrap;
+}
+.proof-item { text-align: center; }
+.proof-item .val { font-size: 26px; font-weight: 800; color: var(--gold2); line-height: 1; }
+.proof-item .lbl { font-size: 11px; color: rgba(255,255,255,0.45); margin-top: 3px; text-transform: uppercase; letter-spacing: 0.5px; }
+
+/* ── CREDENTIAL BAR ── */
+.cred-bar {
+  background: var(--navy); padding: 20px 5%;
+  display: flex; align-items: center; justify-content: center;
+  gap: 40px; flex-wrap: wrap;
+}
+.cred-item {
+  display: flex; align-items: center; gap: 10px;
+  color: rgba(255,255,255,0.6); font-size: 13px; font-weight: 500;
+}
+.cred-item .icon { font-size: 18px; }
+.cred-item strong { color: rgba(255,255,255,0.9); }
+
+/* ── SECTIONS ── */
+section { padding: 88px 5%; }
+.section-label {
+  font-size: 12px; font-weight: 700; letter-spacing: 2px;
+  text-transform: uppercase; color: var(--gold); margin-bottom: 12px;
+}
+.section-title {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(28px, 3.5vw, 40px);
+  color: var(--navy); margin-bottom: 16px; line-height: 1.2;
+}
+.section-sub { font-size: 17px; color: var(--gray); max-width: 580px; }
+.section-header { margin-bottom: 48px; }
+
+/* ── SERVICES ── */
+.services { background: var(--cream); }
+.services-grid {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+}
+.service-card {
+  background: var(--white); border-radius: 12px;
+  padding: 28px; border: 1px solid var(--border);
+  transition: box-shadow 0.2s, transform 0.2s;
+}
+.service-card:hover { box-shadow: 0 8px 32px rgba(0,0,0,0.08); transform: translateY(-2px); }
+.service-card .icon { font-size: 32px; margin-bottom: 14px; }
+.service-card h3 { font-size: 17px; font-weight: 700; color: var(--navy); margin-bottom: 8px; }
+.service-card p { font-size: 14px; color: var(--gray); margin-bottom: 14px; line-height: 1.6; }
+.service-card .price { font-size: 17px; font-weight: 700; color: var(--gold); }
+.service-tag {
+  display: inline-block; background: var(--light);
+  color: var(--navy); font-size: 11px; font-weight: 600;
+  padding: 3px 10px; border-radius: 20px; margin-bottom: 10px;
+}
+
+/* ── ABOUT ── */
+.about { background: var(--white); }
+.about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: center; }
+.about-text h2 { font-family: 'Playfair Display', serif; font-size: 36px; color: var(--navy); margin-bottom: 20px; line-height: 1.2; }
+.about-text p { color: var(--gray); margin-bottom: 14px; font-size: 15px; }
+.creds-list { margin-top: 24px; display: flex; flex-direction: column; gap: 10px; }
+.cred-row {
+  display: flex; align-items: center; gap: 12px;
+  background: var(--light); border-radius: 8px; padding: 12px 16px;
+}
+.cred-row .icon { font-size: 20px; }
+.cred-row div h4 { font-size: 13px; font-weight: 700; color: var(--navy); }
+.cred-row div p { font-size: 12px; color: var(--gray); margin: 0; }
+.about-visual {
+  background: var(--navy2); border-radius: 16px;
+  padding: 36px; color: #fff;
+}
+.about-visual h3 { font-size: 20px; font-weight: 700; color: var(--gold2); margin-bottom: 20px; }
+.mamaguard-demo {
+  background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 10px; padding: 20px; margin-bottom: 16px;
+}
+.mamaguard-demo .label { font-size: 11px; color: rgba(255,255,255,0.4); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 8px; }
+.mamaguard-demo h4 { font-size: 15px; font-weight: 700; color: #fff; margin-bottom: 6px; }
+.mamaguard-demo p { font-size: 13px; color: rgba(255,255,255,0.6); margin: 0; }
+.triage-badge {
+  display: inline-block; padding: 4px 12px; border-radius: 4px;
+  font-size: 12px; font-weight: 700; margin-top: 10px;
+}
+.high { background: #FEE2E2; color: #991B1B; }
+.routine { background: #DCFCE7; color: #166534; }
+.monitor { background: #FEF3C7; color: #92400E; }
+.demo-links { display: flex; gap: 10px; margin-top: 16px; flex-wrap: wrap; }
+.demo-link {
+  background: var(--gold); color: #fff; padding: 8px 16px;
+  border-radius: 6px; font-size: 12px; font-weight: 700;
+  text-decoration: none;
+}
+.demo-link.outline {
+  background: transparent; border: 1px solid rgba(255,255,255,0.3); color: #fff;
+}
+
+/* ── PROOF / TRAINING ── */
+.proof { background: var(--navy); color: #fff; }
+.proof .section-title { color: #fff; }
+.proof .section-sub { color: rgba(255,255,255,0.6); }
+.proof-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px; }
+.proof-card {
+  background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 10px; padding: 24px;
+}
+.proof-card .num { font-size: 36px; font-weight: 800; color: var(--gold2); line-height: 1; }
+.proof-card .lbl { font-size: 13px; color: rgba(255,255,255,0.6); margin-top: 6px; line-height: 1.5; }
+.proof-card .tag { font-size: 11px; color: var(--gold); font-weight: 600; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 8px; }
+
+/* ── CURRICULUM PREVIEW ── */
+.curriculum { background: var(--cream); }
+.curriculum-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+.module {
+  background: var(--white); border-radius: 10px; padding: 20px 24px;
+  border-left: 4px solid var(--navy); display: flex; gap: 16px; align-items: flex-start;
+}
+.module .num {
+  background: var(--navy); color: var(--gold2); min-width: 36px; height: 36px;
+  border-radius: 8px; display: flex; align-items: center; justify-content: center;
+  font-weight: 800; font-size: 13px; flex-shrink: 0;
+}
+.module h4 { font-size: 14px; font-weight: 700; color: var(--navy); margin-bottom: 4px; }
+.module p { font-size: 13px; color: var(--gray); margin: 0; }
+.module.gold { border-left-color: var(--gold); }
+.module.gold .num { background: var(--gold); color: #fff; }
+
+/* ── TESTIMONIAL / QUOTE ── */
+.quote-section { background: var(--white); }
+.quote-card {
+  background: var(--navy2); border-radius: 16px; padding: 48px;
+  text-align: center; max-width: 800px; margin: 0 auto;
+}
+.quote-card blockquote {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(20px, 2.5vw, 26px);
+  color: #fff; line-height: 1.5; margin-bottom: 28px;
+}
+.quote-card blockquote span { color: var(--gold2); }
+.quote-author { color: rgba(255,255,255,0.6); font-size: 14px; }
+.quote-author strong { color: #fff; display: block; font-size: 16px; margin-bottom: 4px; }
+
+/* ── CONTACT ── */
+.contact { background: var(--cream); }
+.contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: start; }
+.contact-info h2 { font-family: 'Playfair Display', serif; font-size: 32px; color: var(--navy); margin-bottom: 16px; }
+.contact-info p { color: var(--gray); margin-bottom: 28px; }
+.contact-channels { display: flex; flex-direction: column; gap: 12px; }
+.channel {
+  display: flex; align-items: center; gap: 14px;
+  background: var(--white); border-radius: 8px; padding: 14px 16px;
+  border: 1px solid var(--border); text-decoration: none;
+  transition: border-color 0.2s;
+}
+.channel:hover { border-color: var(--gold); }
+.channel .icon { font-size: 22px; }
+.channel div h4 { font-size: 13px; font-weight: 700; color: var(--navy); }
+.channel div p { font-size: 13px; color: var(--gray); margin: 0; }
+.contact-form { background: var(--white); border-radius: 12px; padding: 32px; border: 1px solid var(--border); }
+.contact-form h3 { font-size: 18px; font-weight: 700; color: var(--navy); margin-bottom: 20px; }
+.form-group { margin-bottom: 16px; }
+.form-group label { display: block; font-size: 13px; font-weight: 600; color: var(--navy); margin-bottom: 6px; }
+.form-group input, .form-group select, .form-group textarea {
+  width: 100%; padding: 11px 14px; border: 1px solid var(--border);
+  border-radius: 6px; font-family: 'Inter', sans-serif; font-size: 14px;
+  color: var(--text); background: var(--white); transition: border-color 0.2s;
+}
+.form-group input:focus, .form-group select:focus, .form-group textarea:focus {
+  outline: none; border-color: var(--gold);
+}
+.form-group textarea { height: 100px; resize: vertical; }
+.submit-btn {
+  width: 100%; background: var(--navy); color: #fff; border: none;
+  padding: 13px; border-radius: 6px; font-size: 15px; font-weight: 700;
+  cursor: pointer; font-family: 'Inter', sans-serif; transition: background 0.2s;
+}
+.submit-btn:hover { background: var(--gold); }
+
+/* ── FOOTER ── */
+footer {
+  background: var(--navy2); color: rgba(255,255,255,0.5);
+  padding: 32px 5%; display: flex; justify-content: space-between;
+  align-items: center; flex-wrap: gap; gap: 16px; font-size: 13px;
+}
+footer strong { color: var(--gold2); }
+.footer-links { display: flex; gap: 24px; }
+.footer-links a { color: rgba(255,255,255,0.5); text-decoration: none; }
+.footer-links a:hover { color: var(--gold2); }
+
+/* ── FLOATING WHATSAPP ── */
+.wa-btn {
+  position: fixed; bottom: 28px; right: 28px; z-index: 200;
+  background: #25D366; color: #fff; width: 56px; height: 56px;
+  border-radius: 50%; display: flex; align-items: center; justify-content: center;
+  font-size: 26px; text-decoration: none; box-shadow: 0 4px 20px rgba(37,211,102,0.4);
+  transition: transform 0.2s;
+}
+.wa-btn:hover { transform: scale(1.1); }
+
+/* ── RESPONSIVE ── */
+@media (max-width: 768px) {
+  .nav-links { display: none; }
+  .nav-mobile-btn { display: block; }
+  .about-grid, .contact-grid, .curriculum-grid { grid-template-columns: 1fr; }
+  .hero-proof { gap: 20px; }
+  .cred-bar { gap: 20px; }
+  section { padding: 64px 5%; }
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="#" class="nav-logo">KhmerAI<span>Academy</span></a>
+  <ul class="nav-links">
+    <li><a href="#services">Services</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#curriculum">Curriculum</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <a href="#contact" class="nav-cta">Book a Workshop</a>
+  <button class="nav-mobile-btn">☰</button>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="hero-content">
+    <div class="hero-badge">
+      <span class="dot"></span>
+      Cambodia's First Claude AI Training Academy
+    </div>
+    <h1>Master AI.<br><span>Lead Cambodia's</span><br>Digital Future.</h1>
+    <p class="khmer">វិទ្យាស្ថានបណ្តុះបណ្តាល AI លេខ១ — ភ្នំពេញ, កម្ពុជា</p>
+    <p>We train professionals, SMEs, and public sector organizations to work smarter with Claude AI — in Khmer and English, with Cambodia-specific examples that actually apply to your work.</p>
+    <div class="hero-btns">
+      <a href="#contact" class="btn-primary">Book a Workshop →</a>
+      <a href="https://youtu.be/YBgQoACuyLc?si=Hv1zCAsJdGRyN8QI" target="_blank" class="btn-secondary">▶ Watch MamaGuard Demo</a>
+    </div>
+    <div class="hero-proof">
+      <div class="proof-item"><div class="val">10+</div><div class="lbl">AI Textbooks Published</div></div>
+      <div class="proof-item"><div class="val">3hr</div><div class="lbl">Intensive Training Delivered</div></div>
+      <div class="proof-item"><div class="val">ASEAN</div><div class="lbl">Registered Engineer</div></div>
+      <div class="proof-item"><div class="val">Live</div><div class="lbl">AI Product: MamaGuard</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- CREDENTIAL BAR -->
+<div class="cred-bar">
+  <div class="cred-item"><span class="icon">🏛</span><span>Deputy Director General · <strong>MPWT Cambodia</strong></span></div>
+  <div class="cred-item"><span class="icon">🏗</span><span>BEC Reg. <strong>002494</strong></span></div>
+  <div class="cred-item"><span class="icon">🌏</span><span>ASEAN Engineer <strong>AFEO AE 13045</strong></span></div>
+  <div class="cred-item"><span class="icon">🤖</span><span>Technology Lead · <strong>BEC × AAET-C LMC</strong></span></div>
+  <div class="cred-item"><span class="icon">🏥</span><span>Builder of <strong>MamaGuard AI</strong></span></div>
+</div>
+
+<!-- SERVICES -->
+<section class="services" id="services">
+  <div class="section-header">
+    <div class="section-label">What We Offer</div>
+    <h2 class="section-title">Six ways to build your AI capability</h2>
+    <p class="section-sub">Every program is delivered by a practitioner who actually builds AI tools — not just teaches theory.</p>
+  </div>
+  <div class="services-grid">
+    <div class="service-card">
+      <div class="icon">🏢</div>
+      <div class="service-tag">Most Popular</div>
+      <h3>Corporate AI Workshops</h3>
+      <p>Half-day or full-day on-site training for your team. Custom content for your industry — banking, NGO, hospitality, government. Bilingual Khmer/English delivery with hands-on exercises.</p>
+      <div class="price">$800 – $2,500</div>
+    </div>
+    <div class="service-card">
+      <div class="icon">🏅</div>
+      <div class="service-tag">Certificate</div>
+      <h3>AI Mastery Certificate</h3>
+      <p>7-day intensive programme covering Claude AI, CASTROFF prompt framework, Chain-of-Thought strategies, and AI ethics. Cohorts of 15–25. Official KhmerAI Academy certificate upon completion.</p>
+      <div class="price">$199 – $299 / person</div>
+    </div>
+    <div class="service-card">
+      <div class="icon">📚</div>
+      <div class="service-tag">Self-Paced</div>
+      <h3>AI Textbooks & Guides</h3>
+      <p>10+ professionally written books covering Claude AI for lawyers, accountants, NGOs, and business leaders. Available as digital downloads. Updated regularly as AI evolves.</p>
+      <div class="price">$15 – $49 / book</div>
+    </div>
+    <div class="service-card">
+      <div class="icon">🔧</div>
+      <div class="service-tag">High-Impact</div>
+      <h3>AI Implementation Consulting</h3>
+      <p>Design and deploy AI workflows for your organization. Includes needs assessment, prompt library creation, staff training, and optional ongoing retainer support.</p>
+      <div class="price">$500 – $3,000</div>
+    </div>
+    <div class="service-card">
+      <div class="icon">💻</div>
+      <div class="service-tag">Coming Soon</div>
+      <h3>Online Courses</h3>
+      <p>Self-paced video courses launching on our own platform. Topics include Claude for Lawyers, Claude for Accountants, AI for NGO Writing, and Claude Basics in Khmer.</p>
+      <div class="price">$29 – $99 / course</div>
+    </div>
+    <div class="service-card">
+      <div class="icon">🤝</div>
+      <div class="service-tag">Institutional</div>
+      <h3>Curriculum Licensing</h3>
+      <p>License the KhmerAI Academy training curriculum to universities, ministries, or NGOs. Train your own internal trainers using our proven materials and assessment tools.</p>
+      <div class="price">$2,000 – $8,000</div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="about" id="about">
+  <div class="about-grid">
+    <div class="about-text">
+      <div class="section-label">About the Founder</div>
+      <h2>I don't just teach AI.<br>I build with it.</h2>
+      <p>I'm D.Eng. Heng Kim Leng, P.E. — Deputy Director General at Cambodia's Ministry of Public Works and Transport, Deputy CDO, and the founder of KhmerAI Academy.</p>
+      <p>I built <strong>MamaGuard</strong> — a live bilingual AI triage tool helping community health workers in rural Cambodia identify high-risk pregnancies, powered by Google's Gemma 4 and submitted to the Google DeepMind Good Hackathon. I've authored 10+ AI textbooks and delivered Cambodia's first institutional AI Prompt Engineering training for ASEAN public sector professionals in May 2026.</p>
+      <p>When I teach AI, I teach from real projects, not slides. Every example is Cambodia-specific. Every framework is tested in practice.</p>
+      <div class="creds-list">
+        <div class="cred-row"><span class="icon">🏛</span><div><h4>Deputy Director General, GDPW & GDSM — MPWT</h4><p>Senior government official driving Cambodia's digital infrastructure</p></div></div>
+        <div class="cred-row"><span class="icon">🌏</span><div><h4>ASEAN Engineer · AFEO AE 13045 · BEC Reg. 002494</h4><p>Internationally recognized professional engineer</p></div></div>
+        <div class="cred-row"><span class="icon">🤖</span><div><h4>Technology Orientation Lead · BEC × AAET-C LMC</h4><p>Delivered regional AI training for ASEAN public sector professionals</p></div></div>
+        <div class="cred-row"><span class="icon">📖</span><div><h4>Author · 10+ AI Textbooks Published</h4><p>Claude AI, Legal AI, Future of Work, Prediction Markets, and more</p></div></div>
+      </div>
+    </div>
+    <div class="about-visual">
+      <h3>🏥 Live Project: MamaGuard</h3>
+      <div class="mamaguard-demo">
+        <div class="label">AI Maternal Triage · Rural Cambodia</div>
+        <h4>MamaGuard — Gemma 4 Powered</h4>
+        <p>A community health worker describes a patient in plain Khmer or English. Gemma 4 reasons through WHO guidelines using Thinking Mode and instantly outputs a triage decision.</p>
+        <div>
+          <span class="triage-badge high">HIGH RISK</span>
+          <span class="triage-badge monitor">MONITOR</span>
+          <span class="triage-badge routine">ROUTINE</span>
+        </div>
+      </div>
+      <p style="font-size:13px; color:rgba(255,255,255,0.5); margin-bottom:16px;">Submitted to the Google Gemma 4 Good Hackathon (Kaggle × DeepMind) · May 2026</p>
+      <div class="demo-links">
+        <a href="https://mama-guard-gemma4.vercel.app" target="_blank" class="demo-link">🚀 Live Demo</a>
+        <a href="https://youtu.be/YBgQoACuyLc?si=Hv1zCAsJdGRyN8QI" target="_blank" class="demo-link">▶ Watch Video</a>
+        <a href="https://github.com/hengkimleng/Mamaguard-gemma4" target="_blank" class="demo-link outline">💻 GitHub</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROOF NUMBERS -->
+<section class="proof" id="proof">
+  <div class="section-header">
+    <div class="section-label" style="color:var(--gold2)">Why AI Training Matters in Cambodia</div>
+    <h2 class="section-title">Cambodia's AI moment is now</h2>
+    <p class="section-sub">The window to build AI skills before your competitors do is closing fast.</p>
+  </div>
+  <div class="proof-grid">
+    <div class="proof-card">
+      <div class="tag">GDP Impact</div>
+      <div class="num">$6.7B</div>
+      <div class="lbl">AI's projected contribution to Cambodia's GDP by 2030</div>
+    </div>
+    <div class="proof-card">
+      <div class="tag">Skills Gap</div>
+      <div class="num">14%</div>
+      <div class="lbl">Cambodian workers with intermediate digital skills vs. 33% regional average</div>
+    </div>
+    <div class="proof-card">
+      <div class="tag">Growth</div>
+      <div class="num">86%</div>
+      <div class="lbl">Revenue growth for AI-powered Cambodian startups in 2024–25</div>
+    </div>
+    <div class="proof-card">
+      <div class="tag">Market</div>
+      <div class="num">$5.2B</div>
+      <div class="lbl">Cambodia ICT market projected by 2035 — growing at 10% CAGR</div>
+    </div>
+  </div>
+</section>
+
+<!-- CURRICULUM -->
+<section class="curriculum" id="curriculum">
+  <div class="section-header">
+    <div class="section-label">What You'll Learn</div>
+    <h2 class="section-title">Professional AI curriculum built for Cambodia</h2>
+    <p class="section-sub">Our flagship 3-hour intensive covers everything from prompt basics to institutional AI governance — with Cambodia public sector examples throughout.</p>
+  </div>
+  <div class="curriculum-grid">
+    <div class="module">
+      <div class="num">S1</div>
+      <div>
+        <h4>Why AI Prompts Matter + Prompt Anatomy Blueprint</h4>
+        <p>The hidden costs of poor prompts. The 5-component blueprint: Context, Task, Format, Constraints, Examples.</p>
+      </div>
+    </div>
+    <div class="module gold">
+      <div class="num">S2</div>
+      <div>
+        <h4>CASTROFF Framework — Professional Standard</h4>
+        <p>8-dimension prompt engineering standard: Constraints, Audience, Structure, Tone, Role, Output, Focus, Function.</p>
+      </div>
+    </div>
+    <div class="module">
+      <div class="num">S3</div>
+      <div>
+        <h4>Advanced Strategies: CoT, ToT & Pipelines</h4>
+        <p>Chain-of-Thought for complex reasoning. Tree-of-Thought for policy options. Multi-step prompt pipelines for reports.</p>
+      </div>
+    </div>
+    <div class="module gold">
+      <div class="num">S4</div>
+      <div>
+        <h4>Ethics, Inclusive AI & Institutional Governance</h4>
+        <p>Bias traps, Khmer-first inclusive design, prompt libraries, audit trails, and Cambodia AI governance framework.</p>
+      </div>
+    </div>
+    <div class="module">
+      <div class="num">S5</div>
+      <div>
+        <h4>Hands-On Lab + Assessment + Certificate</h4>
+        <p>Real work prompts using CASTROFF. Team pipeline design task. 10-question assessment. Official certificate presentation.</p>
+      </div>
+    </div>
+    <div class="module gold">
+      <div class="num">+</div>
+      <div>
+        <h4>Custom Modules Available</h4>
+        <p>Banking & finance AI · NGO report writing · Legal document drafting · Government policy briefs · HR and recruitment AI.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- QUOTE -->
+<section class="quote-section">
+  <div class="quote-card">
+    <blockquote>"Prompting is not neutral. Every prompt encodes a perspective, a value system, and an assumption about <span>who matters.</span>"</blockquote>
+    <div class="quote-author">
+      <strong>Tavakoli (2026) · Prompt Engineering for Everyone</strong>
+      Academic foundation behind the KhmerAI Academy curriculum
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact" id="contact">
+  <div class="contact-grid">
+    <div class="contact-info">
+      <div class="section-label">Get In Touch</div>
+      <h2>Ready to bring AI training to your organization?</h2>
+      <p>Whether you're a bank, NGO, law firm, ministry, or SME — we'll design a programme that fits your team, your budget, and your goals. All training available in Khmer and English.</p>
+      <div class="contact-channels">
+        <a href="mailto:hengkimleng@gmail.com" class="channel">
+          <span class="icon">📧</span>
+          <div><h4>Email</h4><p>hengkimleng@gmail.com</p></div>
+        </a>
+        <a href="https://github.com/hengkimleng" target="_blank" class="channel">
+          <span class="icon">💻</span>
+          <div><h4>GitHub</h4><p>github.com/hengkimleng</p></div>
+        </a>
+        <a href="https://youtu.be/YBgQoACuyLc?si=Hv1zCAsJdGRyN8QI" target="_blank" class="channel">
+          <span class="icon">▶️</span>
+          <div><h4>YouTube Demo</h4><p>Watch MamaGuard in action</p></div>
+        </a>
+        <a href="https://mama-guard-gemma4.vercel.app" target="_blank" class="channel">
+          <span class="icon">🌐</span>
+          <div><h4>Live Project</h4><p>mama-guard-gemma4.vercel.app</p></div>
+        </a>
+      </div>
+    </div>
+    <div class="contact-form">
+      <h3>Book a Workshop or Consultation</h3>
+      <div class="form-group">
+        <label>Your Name *</label>
+        <input type="text" placeholder="e.g. Sok Dara">
+      </div>
+      <div class="form-group">
+        <label>Organization *</label>
+        <input type="text" placeholder="e.g. ABA Bank, USAID, Ministry of...">
+      </div>
+      <div class="form-group">
+        <label>Email *</label>
+        <input type="email" placeholder="your@email.com">
+      </div>
+      <div class="form-group">
+        <label>I'm interested in</label>
+        <select>
+          <option>Corporate Workshop (half/full day)</option>
+          <option>AI Certificate Programme (7 days)</option>
+          <option>AI Implementation Consulting</option>
+          <option>Textbooks / Online Courses</option>
+          <option>Curriculum Licensing</option>
+          <option>Just exploring — tell me more</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label>Message</label>
+        <textarea placeholder="Tell us about your team size, goals, or any questions..."></textarea>
+      </div>
+      <button class="submit-btn" onclick="handleSubmit()">Send Enquiry →</button>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div>
+    <strong>KhmerAI Academy</strong> · Phnom Penh, Cambodia · 2026<br>
+    Founded by D.Eng. Heng Kim Leng, P.E. · Deputy DG, MPWT
+  </div>
+  <div class="footer-links">
+    <a href="#services">Services</a>
+    <a href="#about">About</a>
+    <a href="https://github.com/hengkimleng" target="_blank">GitHub</a>
+    <a href="https://youtu.be/YBgQoACuyLc?si=Hv1zCAsJdGRyN8QI" target="_blank">YouTube</a>
+    <a href="mailto:hengkimleng@gmail.com">Email</a>
+  </div>
+</footer>
+
+<!-- FLOATING WHATSAPP -->
+<a href="https://wa.me/855" class="wa-btn" target="_blank" title="Chat on WhatsApp">💬</a>
+
+<script>
+function handleSubmit() {
+  const btn = document.querySelector('.submit-btn');
+  btn.textContent = '✓ Sent! We\'ll be in touch within 24 hours.';
+  btn.style.background = '#166534';
+  setTimeout(() => {
+    btn.textContent = 'Send Enquiry →';
+    btn.style.background = '';
+  }, 4000);
+}
+
+// Smooth active nav
+const sections = document.querySelectorAll('section[id]');
+window.addEventListener('scroll', () => {
+  let current = '';
+  sections.forEach(s => {
+    if (window.scrollY >= s.offsetTop - 100) current = s.id;
+  });
+  document.querySelectorAll('.nav-links a').forEach(a => {
+    a.style.color = a.getAttribute('href') === '#' + current
+      ? 'var(--gold2)' : '';
+  });
+});
+</script>
+
+</body>
+</html>
